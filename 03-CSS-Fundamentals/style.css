@@ -1,0 +1,257 @@
+/* external css */
+
+/* universal selector (basically selects all elms) applies to all elm, NO inheritance involved */
+/* can apply any style to every single elm on the page (even non-inherited ones)*/
+* {
+    /*border-top: 10px solid #1098ad;*/
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    font-size: 18px;
+}
+
+body{
+    color: #444;
+    font-family: sans-serif;
+
+    /* An example of a style that doesn't get inherited */
+    border-top: 10px solid #1098ad;
+}
+
+.main-header{
+    background-color: #f7f7f7;
+    /*padding: 20px;*/
+    /*padding-left: 40px;*/
+    /*padding-right: 40px;*/
+    padding: 20px 40px;
+
+    margin-bottom: 60px;
+}
+
+.post-header{
+    margin-bottom: 40px;
+}
+
+article{
+    margin-bottom: 60px;
+}
+
+/* elm selector */
+aside {
+    background-color: #f7f7f7;
+
+    /* short-hand property, 1 property to define 3 different properties */
+    border-top: 5px solid #1098ad;
+    border-bottom: 5px solid #1098ad;
+    padding: 50px 0;
+}
+
+/*h1, h2, h3, h4, p, li {*/
+    /*font-family: sans-serif;*/
+    /*color: #444;*/
+/*}*/
+
+
+/*list of selectors, to avoid duplicate code, so that next time we can just change 1 thing/color, instead of multiple things*/
+h1,h2,h3{
+    color: #1098ad;
+}
+
+
+
+/* h1 is about semantic, doesn't need to biggest font, h1 IS main heading of the page */
+h1{
+    /*color: #1098ad;*/
+
+
+    font-size: 26px;
+
+    /* Makes a text upper-case */
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+h2{
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+h3{
+    font-size: 30px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+h4{
+    font-size: 20px;
+    text-transform: uppercase;
+
+    /* puts it in center of it's parent elm */
+    text-align: center;
+}
+
+p{
+    font-size: 22px;
+
+    /* 1.5 * the font size */
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+ul,ol{
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+
+/* the child overrides the final style */
+li{
+    /* default font-size is 16px */
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+li:last-child{
+    /*0 has NO unit */
+    margin-bottom: 0;
+}
+
+/* descendent selector is all p elements that are inside the footer element */
+/*footer p{*/
+/*    font-size: 16px;*/
+/*}*/
+
+/*article header p {*/
+/*    font-style: italic;*/
+/*}*/
+
+/* Descendant Selector */
+#author{
+    font-style: italic;
+    font-size: 18px;
+}
+
+#copyright {
+    font-size: 16px;
+}
+
+.related-author {
+    color: green;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.related {
+    list-style: none;
+}
+
+body {
+}
+
+/*.first-li{*/
+/*    font-weight: bold;*/
+/*}*/
+
+/* select li, (that is the first child of its parent) */
+li:first-child{
+    font-weight: bold;
+}
+
+li:last-child{
+    font-style: italic;
+}
+
+/*li:nth-child(2){*/
+/*    color: red;*/
+/*}*/
+
+li:nth-child(even){
+    /*color: red;*/
+}
+
+
+
+/* select THE first child of it's parent if it is P THIS IS A MISCONCEPTION DON'T USE PSEUDO-CLASSES
+ WHEN THERE'S MIXED ELEMENTS */
+/*article p:first-child {*/
+/* color: red;*/
+/*}*/
+
+/* Styling Links */
+
+/* link only targets href links */
+a:link {
+    color: #1098ad;
+
+    /*Gets rid of underline */
+    text-decoration: none;
+}
+
+a:visited {
+    /*give it same color as link*/
+    color: #1098ad;
+}
+
+a:hover {
+    color: orangered;
+    font-weight: bold;
+    text-decoration: underline wavy orangered;
+}
+
+a:active {
+    background-color: black;
+    font-style: italic;
+}
+
+/*nav p{*/
+/*    font-size: 18px;*/
+/*}*/
+
+/*p{*/
+/*    font-size: 25px;*/
+/*}*/
+
+
+
+/* Resolving Conflicts */
+
+
+/*#copyright{*/
+/*    color: red;*/
+/*}*/
+
+
+/*if same hierarchy last one applies*/
+
+/*footer p:first-child{*/
+/*    color: red;*/
+/*}*/
+/*.copyright{*/
+/*    color: blue;*/
+/*}*/
+
+
+
+/*.text {*/
+/*    color: yellow;*/
+/*}*/
+
+
+/* WRITE SELECTORS AS SIMPLE AS POSSIBLE */
+
+
+
+/*footer p {*/
+/*    !*color: green !important;*!*/
+/*    color: green;*/
+/*}*/
+
+/*p{*/
+/*    color: orangered;*/
+/*}*/
+
+
+
+
+
