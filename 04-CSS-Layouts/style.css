@@ -1,7 +1,14 @@
+/* for elm that don't get inherited */
+
 * {
   /* border-top: 10px solid #1098ad; */
   margin: 0;
   padding: 0;
+
+  box-sizing: border-box; /* default is content-box */
+  /* this way the TOTAL width will be 300px,
+  INSTEAD of content width being 300px,
+  so content width will be calculated automatically*/
 }
 
 /* PAGE SECTIONS */
@@ -14,7 +21,7 @@ body {
 }
 
 .container {
-  width: 800px;
+  width: 1200px;
   /* margin-left: auto;
   margin-right: auto; */
   margin: 0 auto;
@@ -48,10 +55,7 @@ aside {
   background-color: #f7f7f7;
   border-top: 5px solid #1098ad;
   border-bottom: 5px solid #1098ad;
-  /* padding-top: 50px;
-  padding-bottom: 50px; */
-  padding: 50px 0;
-  width: 500px;
+  padding: 50px 40px;
 }
 
 /* SMALLER ELEMENTS */
@@ -82,6 +86,7 @@ h4 {
   font-size: 20px;
   text-transform: uppercase;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 p {
@@ -134,6 +139,7 @@ li:last-child {
 
 .related {
   list-style: none;
+  margin-left: 0;
 }
 
 body {
@@ -265,3 +271,57 @@ footer p {
 nav p {
   font-size: 18px;
 } */
+
+
+/* FLOATS */
+
+/* img to be taken out of document flow, but other elm will float around it*/
+/* as if img isn't even on the page, doesn't effect surrounding elms (when it comes to height)*/
+.author-img{
+  float: left;
+  margin-bottom: 20px;
+}
+
+.author{
+  /*padding-left: 80px;*/
+  margin-top: 10px;
+  float: left;
+  margin-left: 20px;
+}
+
+
+/*collapsing elm, the header's height has collapsed, REMEMBER, floated means as if they were not in the page (when it comes to height)*/
+h1{
+  float: left;
+}
+nav{
+  float: right;
+}
+
+/*.clear{*/
+/*  clear: both;*/
+/*}*/
+
+.clearfix::after{
+  content: '';
+  /* clearing only works on block elms */
+  display: block;
+  clear: both;
+}
+
+article{
+  /*background-color: green;*/
+  width: 825px;
+  float: left;
+}
+
+aside{
+  /*background-color: red;*/
+  width: 300px;
+  float: right;
+}
+
+footer{
+ /*background-color: yellow;*/
+  clear: both;
+}
