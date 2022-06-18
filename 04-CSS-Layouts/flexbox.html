@@ -50,11 +50,50 @@
             /* FLEXBOX */
             display: flex;
 
+
             /* Vertically as tall as the tallest elm */
             /* Horizontally occupy necessary space */
 
-            /*align-items: center;*/
+            align-items: center; /* vertically aligns items */
+            justify-content: flex-start; /* horizontally aligns items */
+
+            /*  container takes length of highest elm*/
+            /*align-items: start;*/
+            /*align-items: stretch; !* default, all elm stretch as tall as tallest elm*!*/
+
+            gap: 5px;
+
         }
+
+        .el{
+            /*margin-right: 40px;*/
+            /*flex-shrink: 0;*/
+            /*flex-basis: 200px;*/
+
+            /*flex: 0 0 200px;*/
+            /*flex-grow: 1;*/
+
+            /*flex: 1;*/
+        }
+
+        /* on FlexItem itself */
+        .el--1{
+            align-self: flex-start;
+            order: 2;
+        }
+        .el--5{
+            align-self: stretch; /* we globally changed default to center, now changing it to stech */
+            order: 1;
+        }
+        .el--6{
+            order: -1;
+            /*flex-grow: 5;*/ /* gets 5x more of empty space than others */
+
+            /*flex-grow: 1;*/ /* elm fills remainding space */
+        }
+
+
+
     </style>
 
 </head>

@@ -277,51 +277,60 @@ nav p {
 
 /* img to be taken out of document flow, but other elm will float around it*/
 /* as if img isn't even on the page, doesn't effect surrounding elms (when it comes to height)*/
-.author-img{
-  float: left;
-  margin-bottom: 20px;
-}
-
-.author{
-  /*padding-left: 80px;*/
-  margin-top: 10px;
-  float: left;
-  margin-left: 20px;
-}
 
 
-/*collapsing elm, the header's height has collapsed, REMEMBER, floated means as if they were not in the page (when it comes to height)*/
-h1{
-  float: left;
-}
-nav{
-  float: right;
-}
+/*.author-img{*/
+/*  float: left;*/
+/*  margin-bottom: 20px;*/
+/*}*/
 
-/*.clear{*/
+/*.author{*/
+/*  !*padding-left: 80px;*!*/
+/*  margin-top: 10px;*/
+/*  float: left;*/
+/*  margin-left: 20px;*/
+/*}*/
+
+
+/*!*collapsing elm, the header's height has collapsed, REMEMBER, floated means as if they were not in the page (when it comes to height)*!*/
+/*h1{*/
+/*  float: left;*/
+/*}*/
+/*nav{*/
+/*  float: right;*/
+/*}*/
+
+/*!*.clear{*!*/
+/*!*  clear: both;*!*/
+/*!*}*!*/
+
+/*.clearfix::after{*/
+/*  content: '';*/
+/*  !* clearing only works on block elms *!*/
+/*  display: block;*/
 /*  clear: both;*/
 /*}*/
 
-.clearfix::after{
-  content: '';
-  /* clearing only works on block elms */
-  display: block;
-  clear: both;
-}
+/*article{*/
+/*  !*background-color: green;*!*/
+/*  width: 825px;*/
+/*  float: left;*/
+/*}*/
 
-article{
-  /*background-color: green;*/
-  width: 825px;
-  float: left;
-}
+/*aside{*/
+/*  !*background-color: red;*!*/
+/*  width: 300px;*/
+/*  float: right;*/
+/*}*/
 
-aside{
-  /*background-color: red;*/
-  width: 300px;
-  float: right;
-}
+/*footer{*/
+/* !*background-color: yellow;*!*/
+/*  clear: both;*/
+/*}*/
 
-footer{
- /*background-color: yellow;*/
-  clear: both;
+
+/* USING FLEXBOX */
+
+.main-header{
+  display: flex;
 }
