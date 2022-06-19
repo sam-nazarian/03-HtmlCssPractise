@@ -1,4 +1,4 @@
- !DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -14,6 +14,8 @@
       }
       .el--3 {
         background-color: green;
+
+        /* This will overide height of that specifc grid item, (but does not effect other gird items) */
         height: 150px;
       }
       .el--4 {
@@ -40,19 +42,100 @@
         margin: 40px;
 
         /* CSS GRID */
+        display: none;
+
+        /* elms will strech to match that height of longest one in the row */
+        /* fr stands for fraction, expands to fit available space */
+        /* auto only needs size necessory to fit its content */
+        /* grid-template-columns: 3fr 1fr 1fr auto; */
+        grid-template-columns: repeat(4, 1fr);
+
+        /* 1st row gets 300px, 2nd row gets 200px */
+        grid-template-rows: 1fr 1fr 1fr;
+
+        /* 1fr will be set to the tallest elm, so 2fr will be double whatever 1fr was */
+        /* grid-template-rows: 1fr auto; */
+
+        /* height: 500px; */
+
+        /* gap: 5px; */
+        column-gap: 20px;
+        row-gap: 40px;
       }
 
+      /* .el--6 {
+        grid-column: 2;
+        grid-row: 1;
+        /* opacity: 0.2;
+      } */
+
+      .el--8 {
+        grid-column: 2;
+        grid-row: 1;
+        /* opacity: 0.5; */
+      }
+
+      .el--2 {
+        /* if second value just 1 more than first then just remove it */
+        /* grid-column: 1 / span 4; */
+
+        /* -1 spans till end */
+        grid-column: 1 / -1;
+
+        grid-row: 2/3;
+      }
+
+      /* .el--6 {
+        grid-row: 3 / 5;
+      } */
+
       .container--2 {
+        /* display: none; */
+
         /* STARTER */
         font-family: sans-serif;
         background-color: black;
         font-size: 40px;
-        margin: 100px;
+        margin: 40px;
 
-        width: 1000px;
+        /* padding: 0 20px; */
+        width: 700px;
         height: 600px;
 
         /* CSS GRID */
+        display: grid;
+        /* grid-template-columns: 125px 200px 125px; */
+        grid-template-columns: 125px 200px 125px;
+
+        grid-template-rows: 250px 100px;
+        /* grid-template-rows: 1fr 1fr; */
+
+        gap: 50px;
+
+        /* ALIGNING tracks inside container: distribute empty space */
+        /* justify-content: space-between; */
+        /* align-content: space-between; */
+
+        /* MOVE HAPPENS IN: horizontal = width = row */
+        /* MOVE HAPPENS IN: vertical = height = column */
+        align-content: center;
+        justify-content: center;
+
+        /* align-content: space-between; */
+        /* align-content: flex-end; */
+
+        /* ALIGNING items INSIDE cells: moving items around inside cells */
+        align-items: end;
+
+        /* streches items horizontally, which is default */
+        /* justify-items: stretch; */
+
+        justify-items: end;
+      }
+
+      .el--3 {
+        align-self: center;
+        justify-self: center;
       }
     </style>
   </head>
@@ -64,7 +147,7 @@
       <div class="el el--4">(4) are</div>
       <div class="el el--5">(5) amazing</div>
       <div class="el el--6">(6) languages</div>
-      <div class="el el--7">(7) to</div>
+      <!-- <div class="el el--7">(7) to</div> -->
       <div class="el el--8">(8) learn</div>
     </div>
 

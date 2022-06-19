@@ -203,7 +203,7 @@ nav a:link {
   display: block; */
 
   margin-right: 30px;
-  margin-top: 10px;
+  /*margin-top: 10px;*/
   display: inline-block;
 }
 
@@ -238,7 +238,7 @@ h2 {
 }
 
 h2::before {
-  content: "TOP";
+  content: 'TOP';
   background-color: #ffe70e;
   color: #444;
   font-size: 16px;
@@ -272,12 +272,10 @@ nav p {
   font-size: 18px;
 } */
 
-
 /* FLOATS */
 
 /* img to be taken out of document flow, but other elm will float around it*/
 /* as if img isn't even on the page, doesn't effect surrounding elms (when it comes to height)*/
-
 
 /*.author-img{*/
 /*  float: left;*/
@@ -290,7 +288,6 @@ nav p {
 /*  float: left;*/
 /*  margin-left: 20px;*/
 /*}*/
-
 
 /*!*collapsing elm, the header's height has collapsed, REMEMBER, floated means as if they were not in the page (when it comes to height)*!*/
 /*h1{*/
@@ -328,9 +325,60 @@ nav p {
 /*  clear: both;*/
 /*}*/
 
-
 /* USING FLEXBOX */
-
-.main-header{
+.main-header {
   display: flex;
+  align-items: center;
+  justify-content: space-between; /* takes all empty space and puts it between the elm evely, so that elm would convert entire container */
+}
+
+.author-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.author {
+  margin-bottom: 0;
+  margin-left: 15px;
+}
+
+.related-post {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+
+  /* all children vertically aligned - to the container */
+  align-items: center;
+}
+
+.related-author {
+  margin-bottom: 0;
+
+  font-size: 14px;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.related-link:link {
+  font-size: 17px;
+  font-weight: bold;
+  font-style: normal;
+
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.row {
+  display: flex;
+  gap: 75px;
+  align-items: flex-start; /* vertically at the top */
+}
+
+aside {
+  flex: 0 0 300px;
+}
+
+article {
+  flex: 1;
+  margin-bottom: 0px;
 }
