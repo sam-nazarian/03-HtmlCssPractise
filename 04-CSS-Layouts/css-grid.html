@@ -17,6 +17,8 @@
 
         /* This will overide height of that specifc grid item, (but does not effect other gird items) */
         height: 150px;
+
+        /* if no grid-template-rows, then all elm in row will be streched to match the height of largest elm */
       }
       .el--4 {
         background-color: goldenrod;
@@ -42,7 +44,7 @@
         margin: 40px;
 
         /* CSS GRID */
-        display: none;
+        display: grid;
 
         /* elms will strech to match that height of longest one in the row */
         /* fr stands for fraction, expands to fit available space */
@@ -51,7 +53,7 @@
         grid-template-columns: repeat(4, 1fr);
 
         /* 1st row gets 300px, 2nd row gets 200px */
-        grid-template-rows: 1fr 1fr 1fr;
+        /* grid-template-rows: 1fr 1fr 1fr; */
 
         /* 1fr will be set to the tallest elm, so 2fr will be double whatever 1fr was */
         /* grid-template-rows: 1fr auto; */
@@ -103,7 +105,7 @@
         height: 600px;
 
         /* CSS GRID */
-        display: grid;
+        display: none;
         /* grid-template-columns: 125px 200px 125px; */
         grid-template-columns: 125px 200px 125px;
 

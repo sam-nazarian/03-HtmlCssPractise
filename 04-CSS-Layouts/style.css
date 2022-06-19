@@ -33,7 +33,7 @@ body {
   padding-left: 40px;
   padding-right: 40px; */
   padding: 20px 40px;
-  margin-bottom: 60px;
+  /* margin-bottom: 60px; */
   /* height: 80px; */
 }
 
@@ -43,7 +43,7 @@ nav {
 }
 
 article {
-  margin-bottom: 60px;
+  /* margin-bottom: 60px; */
 }
 
 .post-header {
@@ -368,17 +368,52 @@ nav p {
   margin-bottom: 5px;
 }
 
-.row {
+/* FLEXBOX LAYOUT */
+/* .row {
   display: flex;
-  gap: 75px;
-  align-items: flex-start; /* vertically at the top */
-}
+  gap: 75px; */
 
-aside {
+/* vertically at the top */
+/* align-items: flex-start;
+} */
+
+/* aside {
   flex: 0 0 300px;
 }
 
 article {
   flex: 1;
   margin-bottom: 0px;
+} */
+
+/* CSS GRID LAYOUT */
+.container {
+  display: grid;
+
+  /* determining width of columns */
+  grid-template-columns: 1fr 300px;
+
+  column-gap: 75px;
+  row-gap: 60px;
+
+  align-items: flex-start;
+}
+
+/* all children of css grid */
+.main-header {
+  grid-column: 1 / -1;
+  /* margin-bottom: 0; */
+}
+
+article {
+  /* margin-bottom: 0; */
+}
+
+aside {
+  /* align-self: start; */
+}
+
+footer {
+  grid-column: 1 / -1;
+  /* background-color: #1098ad; */
 }
