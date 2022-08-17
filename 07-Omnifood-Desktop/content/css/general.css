@@ -28,6 +28,7 @@ MAIN COLOR: #e67e22
 - Shades: #cf711f
 - Accents:
 - Grays:
+#6f6f6f (lightest grey allowed on #fdf2e9)
 #555
 #333
 
@@ -36,7 +37,7 @@ MAIN COLOR: #e67e22
 
 --- 04 border-radius
 Default: 9px
-
+Medium: 11px
 
 --- 05 WHITESPACE
 
@@ -149,7 +150,7 @@ body {
   font-weight: 600;
 
   /* Put transition on original "state" */
-  transition: background-color 300ms
+  transition: background-color 300ms,box-shadow 300ms, color 300ms
 }
 
 .btn--full:link, .btn--full:visited {
@@ -175,6 +176,46 @@ body {
   box-shadow: inset 0 0 0 3px #fff;
 }
 
+.link:link, .link:visited {
+  display: inline-block;
+  color: #e67e22;
+  text-decoration: none;
+
+  /* takes the text color */
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+
+  transition: color,border 300ms;
+}
+
+.link:hover, .link:active {
+  color: #cf711f;
+
+  /* don't remove border as it would jump the page */
+  border-bottom: 1px solid transparent;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.list-item {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.list-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #e67e22;
+}
+
+/* HELPER/SETTING CLASSES */
 .margin-right-sm{
   /* used a helper class, really want the style that it has, good practise */
 
@@ -182,21 +223,14 @@ body {
   margin-right: 1.6rem !important;
 }
 
-/******************/
-/* HEADER */
-/******************/
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #fdf2e9;
-
-  /*  Because, header needs to be stickly for later */
-  height: 9.6rem;
-  padding: 0 4.8rem;
+.margin-bottom-md {
+  margin-bottom: 4.8rem !important;
 }
 
-.logo {
-  height: 2.2rem;
+.center-text {
+  text-align: center;
+}
+
+strong {
+  font-weight: 500;
 }
