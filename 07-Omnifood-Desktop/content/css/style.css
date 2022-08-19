@@ -372,6 +372,46 @@
   transform: scale(1.1)
 }
 
+.section-pricing {
+  padding: 9.6rem 0;
+}
+
+.pricing-plan{
+  border-radius: 11px;
+
+  /* 75% of available width */
+  width: 75%;
+}
+
+.princing-plan--starter{
+  justify-self: end;
+  border: 2px solid #fdf2e9;
+
+  /* remove 2px, as border adds 2px */
+  padding: 4.6rem;
+}
+
+.princing-plan--complete{
+  background-color: #fdf2e9;
+  padding: 4.8rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.princing-plan--complete::after {
+  content: "Best Value";
+  position: absolute;
+  top: 6%;
+  right: -18%;
+
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 700;
+  background-color: #ffd43b;
+  padding: 0.8rem 8rem ;
+  transform: rotate(45deg);
+}
+
 .plan-header {
   text-align: center;
   margin-bottom: 4.8rem;
@@ -410,6 +450,130 @@
   text-align: center;
 }
 
+.plan-details{
+  font-size: 1.6rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.feature-icon{
+  color: #e67e22;
+  height: 3.2rem;
+  width: 3.2rem;
+  background-color: #fdf2e9;
+  margin-bottom: 3.2rem;
+  padding: 1.6rem;
+  border-radius: 50%;
+}
+
+.feature-title{
+  font-size: 2.4rem;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+}
+
+.feature-text{
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+/******************/
+/* MEALS SECTION */
+/******************/
+
+.section-cta {
+  padding: 9.6rem 0;
+}
+
+.cta {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  box-shadow: 0 2.4rem 4.8rem rgba(0,0,0,0.015);
+  border-radius: 11px;
+
+  background-image: linear-gradient(to right bottom, #eb984e, #e67e22);
+
+  overflow: hidden;
+}
+
+.cta-text-box {
+  padding: 4.8rem 6.4rem 6.4rem 6.4rem;
+  color: #45260a;
+}
+
+.cta .heading-secondary {
+  /* color: #45260a; */
+
+  /* inherit it from parent, so cta-text-box */
+  color: inherit;
+  margin-bottom: 3.2rem;
+}
+
+.cta-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 4.8rem;
+}
+
+.cta-img-box {
+  /* go to parent folder, 1 level up */
+  background-image: linear-gradient(to right bottom, rgb(235, 152, 78, 0.35), rgb(230, 126, 34, 0.35)), url('../img/eating.jpg');
+
+  /* cover entire elm, with bg img */
+  background-size: cover;
+
+  /* center of image should be in frame */
+  background-position: center;
+}
+
+.cta-form{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3.2rem;
+  row-gap: 2.4rem;
+}
+
+
+.cta-form label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+
+.cta-form input, .cta-form select {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+
+  /* force inheriting font-family from parent elm */
+  font-family: inherit;
+  color: inherit;
+  border: none;
+  background-color: #fdf2e9;
+  border-radius: 9px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* sudo elm are elms that we can select & style but don't really exist in the page, like first line*/
+.cta-form input::placeholder {
+  color: #aaa;
+}
+
+/* inside cta, select everything and define focus */
+.cta *:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem rgba(253, 242, 233, 0.5);
+}
+
+/******************/
+/* FOOTER */
+/******************/
+
+.footer{
+  padding: 9.6rem 0;
+}
 
 /* .section-how div div{
   padding: 100px;
